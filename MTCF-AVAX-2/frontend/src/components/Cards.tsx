@@ -42,24 +42,24 @@ export default function Cards() {
     <div>
       <Card className="w-[600px] mt-3 mx-auto">
         <CardHeader>
-          <CardTitle className="mx-auto">Create Todo</CardTitle>
+          <CardTitle className="mx-auto">Project Planner</CardTitle>
           <form onSubmit={handleSubmit}>
-            <Input placeholder="Todo Title" name="title" required />
+            <Input placeholder="Project Title" name="title" required />
             <Input
               className="mt-2"
-              placeholder="Todo Description"
+              placeholder="Project Description"
               name="description"
               required
             />
             <CardFooter className="mt-2 flex justify-center">
-              <Button type="submit">Add Todo</Button>
+              <Button type="submit">Create</Button>
             </CardFooter>
           </form>
         </CardHeader>
       </Card>
 
       <Card className="w-[600px] mt-3 mx-auto p-2">
-        <h1 className="text-center font-bold">Todo List</h1>
+        <h1 className="text-center font-bold">Just Do It!</h1>
         {todos.map((todo, index) => (
           <Card key={index} className="mb-2 ">
             <CardHeader></CardHeader>
