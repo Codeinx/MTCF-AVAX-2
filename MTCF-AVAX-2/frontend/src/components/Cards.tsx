@@ -40,7 +40,7 @@ export default function Cards() {
 
   return (
     <div>
-      <Card className="w-[600px] mt-3 mx-auto">
+      <Card className="w-[600px] mt-3 mx-auto flex">
         <CardHeader>
           <CardTitle className="mx-auto">Project Planner</CardTitle>
           <form onSubmit={handleSubmit}>
@@ -56,27 +56,29 @@ export default function Cards() {
             </CardFooter>
           </form>
         </CardHeader>
+        
+        <Card className="w-[600px] mt-3 mx-auto p-2">
+          <h1 className="text-center font-bold">Just Do It!</h1>
+          {todos.map((todo, index) => (
+            <Card key={index} className="mb-2 ">
+              <CardHeader></CardHeader>
+              <CardContent className="">
+                <div>
+                  <h1 className="font-extrabold">{todo.title}</h1>
+                  <p>{todo.description}</p>
+                </div>
+
+                <div className="flex justify-end space-x-2">
+                  <Button onClick={() => handleEdit(todo)}>Edit</Button>
+                  <Button onClick={() => handleDelete(index)}>Delete</Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </Card>
+        
       </Card>
 
-      <Card className="w-[600px] mt-3 mx-auto p-2">
-        <h1 className="text-center font-bold">Just Do It!</h1>
-        {todos.map((todo, index) => (
-          <Card key={index} className="mb-2 ">
-            <CardHeader></CardHeader>
-            <CardContent className="flex justify-between">
-              <div>
-                <h1 className="font-extrabold">{todo.title}</h1>
-                <p>{todo.description}</p>
-              </div>
-
-              <div className="flex justify-end space-x-2">
-                <Button onClick={() => handleEdit(todo)}>Edit</Button>
-                <Button onClick={() => handleDelete(index)}>Delete</Button>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </Card>
     </div>
   );
 }
