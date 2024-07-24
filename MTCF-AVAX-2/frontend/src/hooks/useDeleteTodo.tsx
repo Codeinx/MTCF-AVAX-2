@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { isSupportedChain } from "../utils/index";
+// import { isSupportedChain } from "../utils/index";
 import { isAddress } from "ethers";
 import { getTodoContract } from "../constants/contract";
 import { getProvider } from "../constants/providers";
