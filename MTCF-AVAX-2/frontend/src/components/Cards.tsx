@@ -39,7 +39,7 @@ export default function Cards() {
   }
 
   return (
-    <div>
+    <div className="flex justify-center items-center">
       <Card className="w-[600px] mt-3 mx-auto flex">
         <CardHeader>
           <CardTitle className="mx-auto">Project Planner</CardTitle>
